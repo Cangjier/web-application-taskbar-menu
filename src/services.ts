@@ -2,7 +2,7 @@ import axios from "axios";
 
 export class Services {
     public static FormatUrl (url:string){
-        return `http://localhost:12332${url}`
+        return `${(window as any).webapplication.baseURL ?? "http://localhost:12332"}${url}`
     }
     public static GetApplicationInfomation() {
         if ((window as any).webapplication) {
